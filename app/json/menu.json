@@ -1,0 +1,35 @@
+[
+    {
+        "age": 0, 
+        "id": "fabric", 
+        "imageUrl": "img/phones/fabric.jpg", 
+        "name": "Fabric", 
+        "snippet": "Select Fabric",
+		"itemDetailUrl": "partials/fabricMenu.html"
+    }, 
+    {
+        "age": 1, 
+        "id": "structure", 
+        "imageUrl": "img/phones/structure.jpg", 
+        "name": "Structure", 
+        "snippet": "Customize Features",
+		"itemDetailUrl": "partials/structureMenu.html"
+    }, 
+    {
+        "age": 2, 
+        "carrier": "accents", 
+        "id": "accents", 
+        "imageUrl": "img/phones/accents.jpg", 
+        "name": "Accents", 
+        "snippet": "Accents",
+		"itemDetailUrl": "partials/accentsMenu.html"
+    }, 
+    {
+        "age": 3, 
+        "id": "signature", 
+        "imageUrl": "img/phones/Signature", 
+        "name": "Signature", 
+        "snippet": "Signature",
+		"itemDetailUrl": "partials/signatureMenu.html"
+    }
+]

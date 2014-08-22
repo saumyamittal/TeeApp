@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10">
+		<div ng-include="itemUrl"></div>
+    </div>
+	<div ng-controller="FabricMenuCtrl">
+	{{menuName}}
+	</div>
+    <div class="col-md-2">
+	  <form name="myForm">
+		<div ng-repeat="menuItem in menuItems | orderBy:orderProp" class="thumbnail">
+			<input type="radio" ng-model="$parent.itemUrl" value="{{menuItem.itemDetailUrl}}" ng-click="setIncludeItem(menuItem)"> {{menuItem.name}} <br/>
+		</div>
+	  </form>
+    </div>
+  </div>
+</div>
