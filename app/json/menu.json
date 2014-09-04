@@ -5,7 +5,9 @@
         "imageUrl": "img/phones/fabric.jpg", 
         "name": "Fabric", 
         "snippet": "Select Fabric",
-		"itemDetailUrl": "partials/fabricMenu.html"
+		"itemDetailUrl": "partials/fabricMenu.html",
+		"itemIconUrl":"img/fabric/Icons/fabric-icon.png",
+		"price": 2300
     }, 
     {
         "age": 1, 
@@ -13,7 +15,9 @@
         "imageUrl": "img/phones/structure.jpg", 
         "name": "Structure", 
         "snippet": "Customize Features",
-		"itemDetailUrl": "partials/structureMenu.html"
+		"itemDetailUrl": "partials/structureMenu.html",
+		"itemIconUrl":"img/fabric/Icons/structure-icon.png",
+		"price": 2100
     }, 
     {
         "age": 2, 
@@ -22,7 +26,9 @@
         "imageUrl": "img/phones/accents.jpg", 
         "name": "Accents", 
         "snippet": "Accents",
-		"itemDetailUrl": "partials/accentsMenu.html"
+		"itemDetailUrl": "partials/accentsMenu.html",
+		"itemIconUrl":"img/fabric/Icons/accent-icon.png",
+		"price": 2200
     }, 
     {
         "age": 3, 
@@ -30,6 +36,8 @@
         "imageUrl": "img/phones/Signature", 
         "name": "Signature", 
         "snippet": "Signature",
-		"itemDetailUrl": "partials/signatureMenu.html"
+		"itemDetailUrl": "partials/signatureMenu.html",
+		"itemIconUrl":"img/fabric/Icons/signature-icon.png",
+		"price": 2300
     }
 ]

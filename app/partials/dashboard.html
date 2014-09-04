@@ -1,17 +1,96 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10">
-		<div ng-include="itemUrl"></div>
-    </div>
-	<div ng-controller="FabricMenuCtrl">
-	{{menuName}}
-	</div>
-    <div class="col-md-2">
-	  <form name="myForm">
-		<div ng-repeat="menuItem in menuItems | orderBy:orderProp" class="thumbnail">
-			<input type="radio" ng-model="$parent.itemUrl" value="{{menuItem.itemDetailUrl}}" ng-click="setIncludeItem(menuItem)"> {{menuItem.name}} <br/>
+<div id="customise" style="height: 620px; cursor: default;">
+
+	<!-- Main Content Start here -->
+	<div style="" class="customise_structure">
+		
+		<!-- Left handed Content here -->
+		<div class="col-md-3" style="height:100%;float:left;min-width:310px;">
+			<br/>
+			Your Design details are - <br/>
+			<p>Fabric details - FabricId: {{defaultTee.fabric.id}}, Price: {{defaultTee.fabric.price}}</p><br/>
+			<p>Structure details - Collar: {{defaultTee.Structure.Collar}}, CollarType: {{defaultTee.Structure.Collar}}</p><br/>
+			<p> your bag size : {{bagSize}}</p>
+			<br/>
+			<div class="price-addto-bag-container">
+				<div class="totalPriceiPad">
+					<div class="greyButton" style="float:left;">
+						<span class="WebRupee rupee-symbol" style="font-size:14px;margin:0px;">₹</span>
+						<span style="font-size:14px;" id="totalPriceIpad">{{defaultTee.fabric.price}}</span>
+					</div>
+					<div class="price-plus-symbol">+</div>
+				</div>
+
+				<div id="btn_checkout_ipad" class="addtobag" ng-click="addToCart(defaultTee)">
+					<div class="greyButton " style="float:left;">
+						<span style="font-size:12px;">add to bag</span>
+					</div>
+					<div class="bag-symbol"><div></div></div>
+				</div> 
+
+				<input type="button" class="orangeButton json-button ipad-json-button" value="SHOW JSON" style="display: none;">
+			</div>
 		</div>
-	  </form>
-    </div>
-  </div>
+		<!-- Left handed Content End here -->
+		
+		
+		<!-- Preview Region -->
+		
+		<div class="col-md-4" style="float:left;width: 1px;">
+			<div class="row">
+				<div class="main-view" style="display: block;">
+					<div class="main-canvas" style="position: absolute; margin-top: 0px;">
+						<img ng-src="../app/img/fabric/studio/shadow/slim/1.png" style="margin-left: 0px; margin-top: 0px;">
+						<img ng-src="../app/img/fabric/studio/sleeves/left/slim/{{defaultTee.fabric.id}}_1.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/sleeves/right/slim/{{defaultTee.fabric.id}}_1.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/body/back/{{defaultTee.fabric.id}}.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/body/front/slim/{{defaultTee.fabric.id}}.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/label.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/cuff/left/slim/{{defaultTee.fabric.id}}_outer.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/cuff/right/slim/{{defaultTee.fabric.id}}_outer.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/cuff/right/slim/{{defaultTee.fabric.id}}_inner.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/fastening/{{defaultTee.fabric.id}}.png" style="position: absolute; top: 0px; left: 0px;">
+						<!-- img id="ts_random_id_1663940_1678819" ng-src="../app/img/fabric/studio/fastening/slim_1_outer/{{defaultTee.fabric.id}}_0.png" style="position: absolute; top: 0px; left: 0px;" -->
+						<img ng-src="../app/img/fabric/studio/collar/7/{{defaultTee.fabric.id}}_outer.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/collar/7/{{defaultTee.fabric.id}}_inner.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/buttonholes/fastening/slim/f{{defaultTee.fabric.id}}.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/buttons/fastening/slim/22.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/buttonthread/fastening/slim/b22.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/buttonholes/collar/7/f{{defaultTee.fabric.id}}.png" style="position: absolute; top: 0px; left: 0px;">
+						<img ng-src="../app/img/fabric/studio/buttons/collar/7/22.png" style="position: absolute; top: 0px; left: 0px;">
+						<!-- img id="ts_random_id_1067307_466925" ng-src="../app/img/fabric/studio/thread/collar/7/b22.png" style="position: absolute; top: 0px; left: 0px;" -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- template files for tabs -->
+		<div class="main_container_div col-md-5">
+			<div class="row clear main_container_div_div_row" style="height: 620px; margin-left: 0px; display: block !important;">
+            <div ng-include="selectedMenuItem.itemDetailUrl"></div>
+			
+			<!-- Containers for different Menu-->
+			
+			
+			<!-- code for main menu: right most column -->
+			<div class="col-md-2 custome_structure_main_right_tabs">
+				<div class="custome_structure_sub_right_tabs1">
+					<div ng-repeat="menuItem in menuItems | orderBy:orderProp">
+						<div class="common_tooltip" ng-show="isEnableHover['{{menuItem.id}}']">{{menuItem.name}}</div>
+						<input type="radio" ng-model="$parent.selectedMenuItem" ng-value="{{menuItem}}" ng-click="setIncludeItem(menuItem)"  id="{{menuItem.id}}"> 
+						<label class="radio" for="{{menuItem.id}}" style="background-image: url('{{menuItem.itemIconUrl}}');" ng-mouseover="enableToolTip(menuItem.id)" ng-mouseout="disableToolTip(menuItem.id)"></label>
+						<br/>
+					</div>
+				</div>
+			</div>
+			
+			
+			</div>
+		</div>
+		
+	</div>
+
 </div>
+
+
+
+{{hash}}

@@ -1,0 +1,11 @@
+<div ng-controller="FabricMenuCtrl">
+	<form name="myForm">
+		<div ng-repeat="fabric in fabricList" class="thumbnail">
+			<input type="radio" ng-model="$parent.fabric" value="{{fabric}}" ng-click="updateFabric(fabric)"> {{fabric.name}} <br/>
+			<p>Price: {{fabric.price}}</p><br/>
+		</div>
+	  </form>
+	  
+	  {{fabric}}
+	  
+</div>

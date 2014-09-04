@@ -1,5 +1,33 @@
 <div ng-controller="FabricMenuCtrl">
-This is a Fabric Menuuuuuuuuuu 
-asdfasfads
-{{menuName}}
+	<form name="myForm">
+	
+		<div id="fabric-container" class="customise_fabric_main_div customise_common_div col-md-10" style="display: block; right: 13%;">
+			<div class="fabric_heading clear">
+				<span class="fabric_heading_close_text">Fabric</span>
+			</div>
+			<div class="fkabricThumbnail" id="fabricMainTab">
+				<br>
+				<div id="inclThumbnailTPL">
+					<div id="image_box" style="height: 480px; width: 349px; padding-right: 10px; outline: none; overflow: hidden;" tabindex="0">
+						<div class="fabric_sub_image_box">
+							<span class="col">
+								<div ng-repeat="fabric in fabricList" class="imageDiv" style="">
+									<input type="radio" ng-model="$parent.fabric" ng-value="{{fabric}}" ng-click="updateFabric(fabric)"  id="{{fabric.id}}"> 
+									<label class="radio" for="{{fabric.id}}" style="background-image: url('{{fabric.thumbnailImageUrl}}');"></label>
+									<img ng-show="showSelectedFabric(fabric)" class="trans" src="../app/img/fabric/Thumbnails/Click.png">
+									<span class="labels thumbnail_img" id="price_mouse_over">
+										<span class="WebRupee">Rs.</span>{{fabric.price}}
+									</span>
+								</div>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		
+	
+		
+	  </form>	  
 </div>

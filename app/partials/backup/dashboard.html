@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+  
+	<div class="col-md-5" class="thumbnail">
+		Your Design details are - <br/>
+		<p>Fabric details - FabricId: {{defaultTee.fabric.id}}, Price: {{defaultTee.fabric.price}}</p><br/>
+		<p>Structure details - Collar: {{defaultTee.Structure.Collar}}, CollarType: {{defaultTee.Structure.Collar}}</p><br/>
+    </div>
+	
+    <div class="col-md-5">
+		<div ng-include="selectedMenuItem.itemDetailUrl"></div>
+    </div>
+	
+    <div class="col-md-2">
+	  <form name="myForm">
+		<div ng-repeat="menuItem in menuItems | orderBy:orderProp" class="thumbnail">
+			<input type="radio" ng-model="$parent.selectedMenuItem" ng-value="{{menuItem}}" ng-click="setIncludeItem(menuItem)" style="background-image: url('{{menuItem.itemIconUrl}}');"> {{menuItem.name}} <br/>
+		</div>
+	  </form>
+    </div>
+  </div>
+</div>
