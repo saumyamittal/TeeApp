@@ -19,14 +19,14 @@
 					</div>
 					<div class="price-plus-symbol">+</div>
 				</div>
-
-				<div id="btn_checkout_ipad" class="addtobag" ng-click="addToCart(defaultTee)">
-					<div class="greyButton " style="float:left;">
-						<span style="font-size:12px;">add to bag</span>
-					</div>
-					<div class="bag-symbol"><div></div></div>
-				</div> 
-
+				<a data-toggle="modal" href="#example">
+					<div id="btn_checkout_ipad" class="addtobag" ng-click="addToCart(defaultTee)">
+						<div class="greyButton " style="float:left;">
+							<span style="font-size:12px;">Add to Bag</span>
+						</div>
+						<div class="bag-symbol"><div></div></div>
+					</div> 
+				</a>
 				<input type="button" class="orangeButton json-button ipad-json-button" value="SHOW JSON" style="display: none;">
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 		
 		<div class="col-md-4" style="float:left;width: 1px;">
 			<div class="row">
-				<div class="main-view" style="display: block;">
+				<div class="main-view" style="display: none;">
 					<div class="main-canvas" style="position: absolute; margin-top: 0px;">
 						<img ng-src="../app/img/fabric/studio/shadow/slim/1.png" style="margin-left: 0px; margin-top: 0px;">
 						<img ng-src="../app/img/fabric/studio/sleeves/left/slim/{{defaultTee.fabric.id}}_1.png" style="position: absolute; top: 0px; left: 0px;">
@@ -91,6 +91,21 @@
 
 </div>
 
-
-
-{{hash}}
+<!-- Modal Content -->
+<div id="example" class="modal hide fade" style="width: 922px; height: 490px; top: 150px; left: 160.5px; display: none; margin:0px">
+	<div class="modal-header">
+	  <a class="close" data-dismiss="modal">×</a>
+	  <div class="modal_heading">Cart ({{bagSize}})</div>
+	</div>
+	<div class="modal-body">
+	  <div id="inclCartTPL">
+			<div id="cart_box" style="height: 330px; outline: none; overflow: hidden; width: 100% !important;" tabindex="0">
+				<p>{{cartItems}}</p>
+			</div>
+	  </div>
+	<div class="modal-footer">
+		<div class="col-md-3" style="float:left;">sdsfd</div>
+		<div class="col-md-4" style="float:left;">sfs</div>
+		<div class="col-md-5">sdfffd</div>
+	</div>
+</div>

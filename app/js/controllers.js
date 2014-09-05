@@ -40,7 +40,12 @@ designTeeControllers.controller('DashBoardCtrl', ['$scope', '$http', 'greeter', 
 	
 	$scope.addToCart = function(item){
 		cartService.addToCart(item);
+		$scope.cartItems = cartService.getCart();
 		$scope.bagSize = cartService.getTotalItems();
+	};
+	
+	$scope.getCart = function(){
+		$scope.cartItems = cartService.getCart();
 	};
 	
 	$scope.bagSize = cartService.getTotalItems();
@@ -129,6 +134,11 @@ designTeeControllers.controller('DashBoardCtrl', ['$scope', '$http', 'greeter', 
 				minScrollbarLength: 28
 			});
 		}
+		$('#cart_box').enscroll({
+			verticalTrackClass: 'track4',
+			verticalHandleClass: 'handle4',
+			minScrollbarLength: 28
+		});
 	}
   
 });
